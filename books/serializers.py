@@ -19,15 +19,6 @@ class BookSerializer(serializers.ModelSerializer):
         read_only_fields = ["avg_rating", "created_at", "modified_at"]
 
 
-# class ToggleRecommendationSerializer(serializers.Serializer):
-#     is_recommended = serializers.BooleanField(default=False)
-
-#     class Meta:
-#         fields = [
-#             "is_recommended",
-#         ]
-
-
 class ToggleRecommendationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
