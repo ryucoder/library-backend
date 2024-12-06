@@ -7,7 +7,7 @@ class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = [
-            "user",
+            # "user",
             "id",
             "title",
             "description",
@@ -26,7 +26,7 @@ class ToggleRecommendationSerializer(serializers.ModelSerializer):
             "is_recommended",
         ]
         read_only_fields = [
-            "user",
+            # "user",
             "id",
             "title",
             "description",

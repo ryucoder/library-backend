@@ -4,9 +4,9 @@ from core.models import TimeStampedModel
 
 
 class Book(TimeStampedModel):
-    user = models.ForeignKey(
-        "users.User", on_delete=models.CASCADE, related_name="contacts"
-    )
+    # user = models.ForeignKey(
+    #     "users.User", on_delete=models.CASCADE, related_name="contacts"
+    # )
     title = models.CharField(max_length=255)
     description = models.TextField()
     is_recommended = models.BooleanField(default=False)

@@ -16,7 +16,7 @@ class BookAdmin(admin.ModelAdmin):
         "title",
         "is_recommended",
         "avg_rating",
-        "user",
+        # "user",
         "created_at",
         "modified_at",
     ]
