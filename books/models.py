@@ -10,6 +10,7 @@ class Book(TimeStampedModel):
     title = models.CharField(max_length=255)
     description = models.TextField()
     is_recommended = models.BooleanField(default=False)
+    avg_rating = models.FloatField(default=0.00)
 
     def __str__(self):
         return f"{self.title}"
