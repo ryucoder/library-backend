@@ -2,8 +2,12 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from books.models import Book
-from books.serializers import BookSerializer, ToggleRecommendationSerializer
+from books.models import Book, Review
+from books.serializers import (
+    BookSerializer,
+    ToggleRecommendationSerializer,
+    ReviewSerializer,
+)
 from core.utils import CommonUtil
 
 
@@ -38,3 +42,18 @@ class BookViewset(viewsets.ModelViewSet):
 
         output_serializer = BookSerializer(instance)
         return Response(output_serializer.data, status=status.HTTP_200_OK)
+
+
+class ReviewViewset(viewsets.ModelViewSet):
+    serializer_class = ReviewSerializer
+    authentication_classes = CommonUtil.get_authentication_classes()
+
+    def get_queryset(self):
+        queryset = Review.objects.all().order_by("-created_at")
+        return queryset
+
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context["user"] = self.request.user
+        context["action"] = self.action
+        return context

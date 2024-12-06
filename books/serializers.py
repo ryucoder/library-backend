@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from books.models import Book
+from books.models import Book, Review
 
 
 class BookSerializer(serializers.ModelSerializer):
@@ -31,6 +31,24 @@ class ToggleRecommendationSerializer(serializers.ModelSerializer):
             "title",
             "description",
             "avg_rating",
+            "created_at",
+            "modified_at",
+        ]
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = [
+            "book",
+            "user",
+            "id",
+            "rating",
+            "review",
+            "created_at",
+            "modified_at",
+        ]
+        read_only_fields = [
             "created_at",
             "modified_at",
         ]
