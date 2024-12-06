@@ -146,6 +146,7 @@ ENVIRONMENT = "staging"
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'http://0.0.0.0:3000',
+    'http://3.110.135.97:3000',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -154,6 +155,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
     'http://127.0.0.1:8000',
     'http://0.0.0.0:3000',
+    'http://0.0.0.0:8000',
+    'http://3.110.135.97:3000',
+    'http://3.110.135.97:8000',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
